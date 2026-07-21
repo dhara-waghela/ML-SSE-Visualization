@@ -10,7 +10,7 @@ By fixing the slope at $a_1 = 0.7$ and sweeping $a_0$ from $-0.9$ to $1.7$, the 
 
 ---
 
-## 📌 Overview & Theory
+## - Overview & Theory
 
 The goal of this project is to visually demonstrate how optimization algorithms (like gradient descent) find the best-fitting parameter by minimizing the total error.
 
