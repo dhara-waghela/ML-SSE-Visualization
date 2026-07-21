@@ -44,5 +44,5 @@ plt.title("surface plot")
 ax.set_xlabel("a0")
 ax.set_ylabel("a1")
 ax.set_zlabel("SSE")
-#ax.view_init(elev=5, azim=158) # can change elevation angle (vertically) and azimuth angle (horizontally) 
+#ax.view_init(elev=0, azim=25) # can change elevation angle (vertically) and azimuth angle (horizontally) 
 plt.show() # SHOWS the surface plot
