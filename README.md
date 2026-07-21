@@ -1,37 +1,149 @@
-# Visualizing Sum of Squared Errors (SSE) vs. Intercept Parameter ($a_0$)
+# Visualizing the Sum of Squared Errors (SSE) in Linear Regression
 
-This repository contains a Python script that explores how the **Sum of Squared Errors (SSE)** varies as a function of the intercept parameter ($a_0$) in a simple linear model:
+This repository contains three Python programs that visualize how the **Sum of Squared Errors (SSE)** changes with different parameters of a simple linear regression model.
 
-$$\hat{y} = a_0 + 0.7x$$
+The projects demonstrate:
 
-By fixing the slope at $a_1 = 0.7$ and sweeping $a_0$ from $-0.9$ to $1.7$, the script calculates the resulting SSE for each step and plots the resulting parabolic error curve.
+1. **Fixed Slope (a₁ = 0.7)** – SSE vs. Intercept (a₀)
+2. **Fixed Intercept (a₀ = -0.1)** – SSE vs. Slope (a₁)
+3. **Varying Intercept and Slope** – 3D SSE Surface (Paraboloid)
+
+These visualizations help explain how the cost function behaves and why optimization algorithms such as **Gradient Descent** search for the minimum value of the error surface.
+
+---
+
+## Mathematical Model
+
+The linear regression model is
+
+$$
+\hat{y}=a_0+a_1x
+$$
+
+where
+
+- $a_0$ = Intercept
+- $a_1$ = Slope
+- $\hat{y}$ = Predicted value
+
+The Sum of Squared Errors (SSE) is calculated as
+
+$$
+S(a_0,a_1)=\sum_{i=0}^{m-1}(y_i-\hat{y}_i)^2
+$$
+
+or
+
+$$
+S(a_0,a_1)=\sum_{i=0}^{m-1}\left(y_i-(a_0+a_1x_i)\right)^2
+$$
+
+Dataset used in all programs:
+
+```python
+x = [1, 2, 3, 4, 5]
+y = [1, 1, 2, 2, 4]
+```
+
+---
+
+# 1. Fixed Slope (a₁ = 0.7)
+
+The slope is fixed at **0.7**, while the intercept **a₀** is varied.
+
+The program calculates the SSE for different values of **a₀** and generates a scatter plot of **SSE vs. a₀**.
+
+### File
+
+```
+fixed_a0.py
+```
+
+### Output
 
 <p align="center">
-  <img src="output.png" alt="Scatter Plot Output" width="600">
+  <img src="fix_a0.png" width="600">
 </p>
 
 ---
 
-## - Overview & Theory
+# 2. Fixed Intercept (a₀ = -0.1)
 
-The goal of this project is to visually demonstrate how optimization algorithms (like gradient descent) find the best-fitting parameter by minimizing the total error.
+The intercept is fixed at **-0.1**, while the slope **a₁** is varied.
 
-### Formula
-For a dataset of $m$ observations, the SSE is calculated as:
+The program calculates the SSE for different values of **a₁** and generates a scatter plot of **SSE vs. a₁**.
 
-$$\text{SSE}(a_0) = \sum_{i=0}^{m-1} \left(y_i - \hat{y}_i\right)^2 = \sum_{i=0}^{m-1} \left(y_i - (a_0 + 0.7x_i)\right)^2$$
+### File
 
-Where:
-- **$x$**: Independent variable dataset `[1, 2, 3, 4, 5]`
-- **$y$**: Dependent variable dataset `[1, 1, 2, 2, 4]`
-- **$\hat{y}$**: Predicted values given intercept $a_0$ and slope $0.7$
+```
+fixed_a1.py
+```
+
+### Output
+
+<p align="center">
+  <img src="fix_a1.png" width="600">
+</p>
 
 ---
 
-## 📁 Repository Structure
+# 3. Varying Intercept and Slope
+
+Both **a₀** and **a₁** are varied simultaneously.
+
+The program computes the SSE for every combination of the two parameters and visualizes the resulting cost function as a **3D surface plot (paraboloid)**.
+
+### File
+
+```
+varying_a0_a1.py
+```
+
+### Output
+
+<p align="center">
+  <img src="vary_a0-a1.png" width="700">
+</p>
+
+---
+
+# Repository Structure
 
 ```text
 .
-├── plot.py          # Python script with SSE function & matplotlib code
-├── output.png       # Generated scatter plot visualization (SSE vs a0)
-└── README.md        # Documentation
+├── fixed_a0.py
+├── fixed_a1.py
+├── varying_a0_a1.py
+├── fix_a0.png
+├── fix_a1.png
+├── vary_a0-a1.png
+└── README.md
+```
+
+---
+
+# Requirements
+
+- Python 3.x
+- NumPy
+- Matplotlib
+
+Install the required libraries using:
+
+```bash
+pip install numpy matplotlib
+```
+
+---
+
+# Learning Outcomes
+
+This project demonstrates:
+
+- Linear Regression
+- Sum of Squared Errors (SSE)
+- Cost Function Visualization
+- Effect of Intercept on Error
+- Effect of Slope on Error
+- 3D Cost Surface (Paraboloid)
+- Data Visualization using Matplotlib
