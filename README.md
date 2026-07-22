@@ -56,7 +56,7 @@ The program calculates the SSE for different values of **a₀** and generates a 
 ### File
 
 ```
-fixed_a0.py
+vary_a0.py
 ```
 
 ### Output
@@ -76,7 +76,7 @@ The program calculates the SSE for different values of **a₁** and generates a 
 ### File
 
 ```
-fixed_a1.py
+vary_a1.py
 ```
 
 ### Output
