@@ -62,7 +62,7 @@ vary_a0.py
 ### Output
 
 <p align="center">
-  <img src="fix_a0.png" width="600">
+  <img src="vary_a0.png" width="600">
 </p>
 
 ---
@@ -82,7 +82,7 @@ vary_a1.py
 ### Output
 
 <p align="center">
-  <img src="fix_a1.png" width="600">
+  <img src="vary_a1.png" width="600">
 </p>
 
 ---
